@@ -4,11 +4,21 @@
    padding-top: 0;
    margin-bottom: 0;
 }
+.div2
+{
+  border-style: outset;
+  background-color: antiquewhite;
+}
 .bigfont
 {
   font-size: 24;
 }
-
+.name
+{
+  font-size: larger;
+  font-weight: 100;
+  
+}
 .right
 {
    text-align: right;
