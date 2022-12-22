@@ -15,7 +15,7 @@
 }
 .name
 {
-  font-size: x-large;
+  font-size: xx-large;
   
   font-weight: 100;
   
@@ -32,6 +32,10 @@
    float: left;
    width: 45%;
  }
+ .column4 {
+  float: left;
+  width: 26%;
+}
  .column2 {
    float: left;
    width: 50%;
