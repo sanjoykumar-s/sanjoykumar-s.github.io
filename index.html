@@ -342,18 +342,18 @@
                                 <h1>Let's talk</h1>
                             </div>
                             <div class="col-lg-8" data-aos="zoom-in-up" data-aos-delay="300">
-                                <form action="#" class="row gy-3 g-lg-3">
+                                <form onsubmit="msgSent();reset();return false;" action="#" class="row gy-3 g-lg-3">
                                     <div class="form-group col-md-6">
-                                        <input type="text" class="form-control" placeholder="Enter Your Name">
+                                        <input type="text" id="name" class="form-control" placeholder="Enter Your Name">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <input type="email" class="form-control" placeholder="Enter Your Email">
+                                        <input type="email" id="email" class="form-control" placeholder="Enter Your Email">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <input type="text" class="form-control" placeholder="Enter Topics">
+                                        <input type="text" id="subject" class="form-control" placeholder="Enter Subject">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <textarea class="form-control" name=""  rows="6" placeholder="Write Your Message"></textarea>
+                                        <textarea class="form-control" id="message" name=""  rows="6" placeholder="Write Your Message"></textarea>
                                     </div>
                                     <div class="form-group col-md-12 d-grid">
                                          <button type="submit" class="btn btn-brand">Submit</button>
@@ -387,6 +387,30 @@
 
         </div>
     <!--//Content-->
+
+
+    <!--Javascript-->
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        function msgSent()
+        {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let subject = document.getElementById("subject").value;
+            let message = document.getElementById("message").value;
+            Email.send({
+                SecureToken : "251c750e-33ef-42b1-ac19-78e2d85144c0",
+                To : 'sk03ru@gmail.com',
+                From : "sanjoy.y.abc@gmail.com",
+                Subject : "Mail from Portfolio Website.",
+                Body : "Name: " + name + "<br>User Email: " + email + "<br>Subject: "
+                + subject + "<br>User Message:<br>" + message
+            }).then(
+            message => alert("Message Sent Successfully.")
+            );
+        }
+    </script>
 
     <script src="./Assets/js/aos.js"></script>
     <script src="./Assets/js/bootstrap.bundle.min.js"></script>
